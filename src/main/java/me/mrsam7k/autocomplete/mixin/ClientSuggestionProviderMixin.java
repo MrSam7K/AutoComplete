@@ -12,11 +12,10 @@ import java.util.Collection;
 @Mixin(ClientSuggestionProvider.class)
 public class ClientSuggestionProviderMixin {
 
-    @Inject(method = "getCustomTabSugggestions", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getCustomTabSugggestions", at = @At("RETURN"))
     public void addAutoCompleteWords(CallbackInfoReturnable<Collection<String>> cir){
         Collection<String> currentCollection = cir.getReturnValue();
         currentCollection.add("Minecraft");
         currentCollection.addAll(AutoComplete.autoCompleteWords);
-        cir.setReturnValue(currentCollection);
     }
 }
