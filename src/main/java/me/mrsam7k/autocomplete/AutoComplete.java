@@ -1,16 +1,17 @@
 package me.mrsam7k.autocomplete;
 
-import com.google.common.base.Charsets;
-import com.google.common.io.Files;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public class AutoComplete implements ModInitializer {
 
@@ -18,6 +19,8 @@ public class AutoComplete implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        AutoConfig.register(Config.class, Toml4jConfigSerializer::new);
+
         try {
             URI uri = URI.create("https://raw.githubusercontent.com/MrSam7K/data/main/AutoComplete/words.txt");
             HttpResponse<String> httpResponse;

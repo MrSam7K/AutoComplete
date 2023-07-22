@@ -1,6 +1,8 @@
 package me.mrsam7k.autocomplete.mixin;
 
 import me.mrsam7k.autocomplete.AutoComplete;
+import me.mrsam7k.autocomplete.Config;
+import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.client.multiplayer.ClientSuggestionProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,6 +16,8 @@ public class ClientSuggestionProviderMixin {
 
     @Inject(method = "getCustomTabSugggestions", at = @At("RETURN"))
     public void addAutoCompleteWords(CallbackInfoReturnable<Collection<String>> cir){
+        Config config = AutoConfig.getConfigHolder(Config.class).getConfig();
+        if(!config.enableAutoComplete) return;
         Collection<String> currentCollection = cir.getReturnValue();
         currentCollection.add("Minecraft");
         currentCollection.addAll(AutoComplete.autoCompleteWords);

@@ -18,6 +18,9 @@
     ],
     "main": [
       "me.mrsam7k.autocomplete.AutoComplete"
+    ],
+    "modmenu": [
+      "me.mrsam7k.autocomplete.ModMenuIntegration"
     ]
   },
   "mixins": [
