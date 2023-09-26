@@ -19,7 +19,6 @@ public class ClientSuggestionProviderMixin {
         Config config = AutoConfig.getConfigHolder(Config.class).getConfig();
         if(!config.enableAutoComplete) return;
         Collection<String> currentCollection = cir.getReturnValue();
-        currentCollection.add("Minecraft");
         currentCollection.addAll(AutoComplete.autoCompleteWords);
     }
 }
