@@ -18,6 +18,9 @@ public class ClientSuggestionProviderMixin {
     public void addAutoCompleteWords(CallbackInfoReturnable<Collection<String>> cir){
         Config config = AutoConfig.getConfigHolder(Config.class).getConfig();
         if(!config.enableAutoComplete) return;
+        if(config.selectedLang != AutoComplete.selectedLang){
+            AutoComplete.updateLanguage();
+        }
         Collection<String> currentCollection = cir.getReturnValue();
         currentCollection.addAll(AutoComplete.autoCompleteWords);
     }

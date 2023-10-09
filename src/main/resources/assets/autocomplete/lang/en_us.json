@@ -1,3 +1,4 @@
 {
-  "text.autoconfig.autocomplete.option.enableAutoComplete": "Enable Auto Complete"
+  "text.autoconfig.autocomplete.option.enableAutoComplete": "Enable Auto Complete",
+  "text.autoconfig.autocomplete.option.selectedLang": "Selected Language"
 }
