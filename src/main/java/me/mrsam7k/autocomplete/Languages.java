@@ -18,8 +18,7 @@ public enum Languages {
 
     @Override
     public String toString() {
-        if(this.equals(Big_English)) return "English (Big)";
-        else return this.name();
+        return "language.autocomplete." + this.name().toLowerCase();
     }
 
     Languages(String code) {
