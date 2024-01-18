@@ -1,19 +1,17 @@
 package me.mrsam7k.autocomplete;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public enum Languages {
-    English(""),
-    Russian("ru"),
-    Chinese("zh"),
-    Big_English("en"),
-    Portuguese("pt");
+    english(""),
+    big_english("en"),
+    russian("ru"),
+    chinese("zh"),
+    portuguese("pt");
 
     private final String code;
 
     public String getCode() {
-        return code;
+        if(this.name().equals("english")) return "";
+        else return "-" + code;
     }
 
     @Override

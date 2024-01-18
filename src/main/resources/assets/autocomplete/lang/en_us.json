@@ -1,9 +1,18 @@
 {
   "text.autoconfig.autocomplete.option.enableAutoComplete": "Enable Auto Complete",
   "text.autoconfig.autocomplete.option.selectedLang": "Selected Language",
+
   "language.autocomplete.english": "English",
   "language.autocomplete.big_english": "English (Big)",
   "language.autocomplete.russian": "Russian",
   "language.autocomplete.chinese": "Chinese",
-  "language.autocomplete.portuguese": "Portuguese"
+  "language.autocomplete.portuguese": "Portuguese",
+
+  "text.autoconfig.autocomplete.option.multiLanguageObject": "Multiple Languages",
+  "text.autoconfig.autocomplete.option.multiLanguageObject.allowMultipleLanguages": "Enable",
+  "text.autoconfig.autocomplete.option.multiLanguageObject.english": "English",
+  "text.autoconfig.autocomplete.option.multiLanguageObject.big_english": "English (Big)",
+  "text.autoconfig.autocomplete.option.multiLanguageObject.russian": "Russian",
+  "text.autoconfig.autocomplete.option.multiLanguageObject.chinese": "Chinese",
+  "text.autoconfig.autocomplete.option.multiLanguageObject.portuguese": "Portuguese"
 }

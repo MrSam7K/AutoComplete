@@ -15,13 +15,15 @@ import java.util.Collection;
 public class ClientSuggestionProviderMixin {
 
     @Inject(method = "getCustomTabSugggestions", at = @At("RETURN"))
-    public void addAutoCompleteWords(CallbackInfoReturnable<Collection<String>> cir){
+    public void addAutoCompleteWords(CallbackInfoReturnable<Collection<String>> cir) throws IllegalAccessException {
         Config config = AutoConfig.getConfigHolder(Config.class).getConfig();
+
         if(!config.enableAutoComplete) return;
-        if(config.selectedLang != AutoComplete.selectedLang){
-            AutoComplete.updateLanguage();
-        }
         Collection<String> currentCollection = cir.getReturnValue();
+
+        if(config.selectedLang != AutoComplete.selectedLang) AutoComplete.updateLanguage();
+        if(config.multiLanguageObject.allowMultipleLanguages && !AutoComplete.multiLangCheck.equals(AutoComplete.getMultiLangCheck())) AutoComplete.updateMultiLanguages();
+
         currentCollection.addAll(AutoComplete.autoCompleteWords);
     }
 }
