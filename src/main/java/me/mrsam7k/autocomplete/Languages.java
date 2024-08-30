@@ -5,7 +5,8 @@ public enum Languages {
     big_english("en"),
     russian("ru"),
     chinese("zh"),
-    portuguese("pt");
+    portuguese("pt"),
+    custom("custom");
 
     private final String code;
 

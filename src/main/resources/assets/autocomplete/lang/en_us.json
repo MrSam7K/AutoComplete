@@ -1,12 +1,14 @@
 {
   "text.autoconfig.autocomplete.option.enableAutoComplete": "Enable Auto Complete",
   "text.autoconfig.autocomplete.option.selectedLang": "Selected Language",
+  "text.autoconfig.autocomplete.option.customWords": "Custom Words",
 
   "language.autocomplete.english": "English",
   "language.autocomplete.big_english": "English (Big)",
   "language.autocomplete.russian": "Russian",
   "language.autocomplete.chinese": "Chinese",
   "language.autocomplete.portuguese": "Portuguese",
+  "language.autocomplete.custom": "Custom Only",
 
   "text.autoconfig.autocomplete.option.multiLanguageObject": "Multiple Languages",
   "text.autoconfig.autocomplete.option.multiLanguageObject.allowMultipleLanguages": "Enable",

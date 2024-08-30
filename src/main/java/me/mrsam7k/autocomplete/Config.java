@@ -5,12 +5,17 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.CollapsibleObject;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.EnumHandler;
 import me.shedaniel.autoconfig.annotation.ConfigEntry.Gui.EnumHandler.EnumDisplayOption;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @me.shedaniel.autoconfig.annotation.Config(name = "autocomplete")
 public class Config implements ConfigData {
     public boolean enableAutoComplete = true;
 
     @EnumHandler(option = EnumDisplayOption.BUTTON)
     public Languages selectedLang = Languages.english;
+
+    public List<String> customWords = new ArrayList<>();
 
     @CollapsibleObject()
     public MultiLangObject multiLanguageObject = new MultiLangObject();

@@ -2,6 +2,7 @@ package me.mrsam7k.autocomplete.mixin;
 
 import me.mrsam7k.autocomplete.AutoComplete;
 import me.mrsam7k.autocomplete.Config;
+import me.mrsam7k.autocomplete.Languages;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.client.multiplayer.ClientSuggestionProvider;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,9 +22,16 @@ public class ClientSuggestionProviderMixin {
         if(!config.enableAutoComplete) return;
         Collection<String> currentCollection = cir.getReturnValue();
 
-        if(config.selectedLang != AutoComplete.selectedLang) AutoComplete.updateLanguage();
-        if(config.multiLanguageObject.allowMultipleLanguages && !AutoComplete.multiLangCheck.equals(AutoComplete.getMultiLangCheck())) AutoComplete.updateMultiLanguages();
+        if(!config.selectedLang.equals(Languages.custom)) {
+            if (config.selectedLang != AutoComplete.selectedLang)
+                AutoComplete.updateLanguage();
 
-        currentCollection.addAll(AutoComplete.autoCompleteWords);
+            if (config.multiLanguageObject.allowMultipleLanguages && !AutoComplete.multiLangCheck.equals(AutoComplete.getMultiLangCheck()))
+                AutoComplete.updateMultiLanguages();
+
+            currentCollection.addAll(AutoComplete.autoCompleteWords);
+        }
+
+        currentCollection.addAll(config.customWords);
     }
 }
